@@ -3,16 +3,6 @@ import { useReducer } from "react";
 import { contadorInit, contadorInitialState, contadorReducer } from "./reducers/contadorReducer";
 import { TYPES } from "./actions/contadorActions";
 const Contador = () => {
-
-	//reduer es la funcion q va tener la logica para nuestro estado
-	const initialState = {contador: 0}
-	const init = (initialState) => {
-		return {
-			contador: initialState.contador + 100
-		}
-	}
-	
-	
 	const [state, dispatch] = useReducer(contadorReducer, contadorInitialState, contadorInit)
   // const [count, setCount] = React.useState(0);
 	const sumar = () => dispatch({type: TYPES.INCREMENT}) 
