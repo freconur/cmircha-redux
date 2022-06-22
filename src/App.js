@@ -1,11 +1,21 @@
 import React from "react";
-import { ShoppingCart } from "./components/shoppingCart";
+import { Provider } from "react-redux";
 import { Contador } from "./contador";
+import { TeoriaRedux } from "./Redux/components/TeoriaRedux";
+import { store } from "./Redux/store";
+import { ShoppingCart } from "./ShoppingCart/ShoppingCart";
 const App = () => {
   return (
     <div>
-      <h1>Reducer</h1>
-      <ShoppingCart/>
+      <Provider store={store}>
+        <h1>shopping Cart con reducer</h1>
+        <ShoppingCart/>
+        <hr/>
+      <h1>Redux</h1>
+      <Contador/>
+      <hr/>
+      <TeoriaRedux/>
+    </Provider>
     </div>
   );
 };
